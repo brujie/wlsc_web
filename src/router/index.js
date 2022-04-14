@@ -40,11 +40,13 @@ const router = new VueRouter({
             component: History,
         },
         {
-            path: '/orderBuy/:name',
+            path: '/orderBuy',
+            name: 'orderBuy',
             component: OrderBuy,
         },
         {
-            path: '/detail/:name',
+            path: '/detail',
+            name:'detail',
             component: Detail,
         },
         {path:'*',component:NotFound},

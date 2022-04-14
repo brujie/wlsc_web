@@ -4,11 +4,11 @@
     <div class="order_info">
       <img
         class="order_img"
-        src="https://source.theone.art/watermarkResize/13bfbf433843161426aa3b13ab7b6ea5/02c62428a520ea585a10275b9c519d6b-16496488313040.25.gif"
+        :src="detail.previewImgUrl"
         alt=""
       />
       <p>
-        <span>宝（动图）</span
+        <span>{{detail.mainTitle}}</span
         ><span style="color: #f95862; font-size: 14px">数量x1</span>
       </p>
       <p><span>艺术家</span><span>Azure</span></p>
@@ -88,6 +88,10 @@ import { getStroage, setStroage } from "../utils/localStroage";
 export default {
   data() {
     return {
+      detail: {
+        mainTitle:"",
+        previewImgUrl:"",
+      },
       show: false,
       flag:false,
       active: 0,
@@ -101,6 +105,9 @@ export default {
     },
   },
   created() {
+    console.log(this.$route.params);
+     this.detail.mainTitle = this.$route.params.mainTitle;
+    this.detail.previewImgUrl = this.$route.params.previewImgUrl;
     if (getStroage("money")) {
       this.money = getStroage("money");
     } else {

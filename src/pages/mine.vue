@@ -8,18 +8,27 @@
       text="网页端移动支付已上线，APP端还需要一段时间的部署，请先使用网页端 感谢用户一直以来的支持。"
     />
     <div class="info">
-      <img class="avatar" src="https://s3.bmp.ovh/imgs/2022/03/30/3d88f42efb7c97d0.png" alt="">
-       <span>
-         {{nickName}}
-       </span>
+      <img
+        class="avatar"
+        src="https://s3.bmp.ovh/imgs/2022/04/14/246957a5e63767ae.png"
+        alt=""
+      />
+      <span>
+        {{ nickName }}
+      </span>
     </div>
-    <van-cell title="我的藏品" @click="goUrl" is-link style="margin-bottom:10px"/>
+    <van-cell
+      title="我的藏品"
+      @click="goUrl"
+      is-link
+      style="margin-bottom: 10px"
+    />
     <van-cell title="中签记录" @click="goHistory" is-link />
     <van-cell title="订单管理" is-link @click="goOrder" />
     <van-cell title="我的余额" is-link @click="goUserMoney" />
     <van-cell title="设置" is-link @click="reset" />
-    <van-cell title="退出" is-link  @click="signOut" />
-    <van-divider contentPosition="center">模拟数据 仅供娱乐</van-divider>
+    <van-cell title="退出" is-link @click="signOut" />
+    <!-- <van-divider contentPosition="center">模拟数据 仅供娱乐</van-divider> -->
   </div>
 </template>
 
@@ -27,28 +36,28 @@
 export default {
   data() {
     return {
-      nickName:"nickName"
+      nickName: "Azure",
     };
   },
   methods: {
-    goUrl(){
-      this.$router.push('/collection')
+    goUrl() {
+      this.$router.push("/collection");
     },
-    goOrder(){
-      this.$router.push('/orderList')
+    goOrder() {
+      this.$router.push("/orderList");
     },
-    goUserMoney(){
-      this.$router.push('/userMoney')
+    goUserMoney() {
+      this.$router.push("/userMoney");
     },
-    goHistory(){
-      this.$router.push('/history')
+    goHistory() {
+      this.$router.push("/history");
     },
-    signOut(){
-     this.nickName = "null";
-     this.$toast('退出成功!');
+    signOut() {
+      this.nickName = "null";
+      this.$toast("退出成功!");
     },
     reset() {
-     this.$toast('待开发~');
+      this.$toast("待开发~");
     },
     onSubmit() {
       this.$httpPost("/create", postData).then((res) => {
@@ -69,25 +78,24 @@ export default {
 </script>
 
 <style scoped>
-
-.info{
+.info {
   padding: 10px 30px;
   display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+  flex-wrap: wrap;
+  align-items: center;
 }
-.info img{
+.info img {
   width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 50%;
-    position: relative;
-    top: 0;
-    left: 0;
+  height: 80px;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50%;
+  position: relative;
+  top: 0;
+  left: 0;
 }
-.info span{
+.info span {
   display: inline-block;
   font-size: 18px;
   margin-left: 30px;

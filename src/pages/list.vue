@@ -10,7 +10,7 @@
         class="list-item"
         v-for="item in list"
         :key="item.productId"
-        @click="handleDetail(item.productId)"
+        @click="handleDetail(item)"
       >
         <van-image width="300" height="300" :src="item.previewImgUrl" />
         <div class="content">
@@ -34,98 +34,70 @@ export default {
     return {
       list: [
         {
-          productId: 41,
-          mainTitle: "灯影传承·福将豪杰",
+          productId: parseInt(Math.random() * 100),
+          mainTitle: "京剧脸谱·关羽",
           previewImgUrl:
-            "https://mcpacimg1.pg0.cn/group5/M00/42/27/CgrZFWI91pKAHmjYAAVgoVEkla4403.png",
-          detailImgUrl:
-            "https://mcpacimg1.pg0.cn/group4/M02/57/8C/CgrZEWI91vOAdGiAACg-G3BU3hA646.png",
-          publisherId: null,
-          publisherName: "时代悲鸿（北京）文化艺术中心",
-          publisherLogo:
-            "https://mcpacimg1.pg0.cn/group4/M01/57/86/CgrZEGI91kOANpVWAAByVuZ4Ht0107.png",
-          totalNumber: 10000,
-          beginTime: "2022-04-01T12:00:00",
-          endTime: "2022-04-05T23:59:59",
-          stockStatus: 2,
-          productType: 2,
-          h5JumpUrl: "",
-          payType: 3,
+            "https://s3.bmp.ovh/imgs/2022/04/14/246957a5e63767ae.png",
+          publisherName: "时代蔚蓝 文化艺术中心",
           price: 9.9,
-          collectionSetId: 75,
-          pageToken: null,
-          creator: "徐悲鸿美术馆",
-          contractAddress:
-            "573f114fed67046ca9d6a81801de9c403ffa42a627f99997f66d35bfd3a7b175",
-          creatorUrl:
-            "https://mcpacimg1.pg0.cn/group4/M01/57/87/CgrZEGI91oqAW9vZAAEMfB_niJQ636.jpg",
-          label: "非遗经典",
-          showType: "1",
-          sysTime: null,
-          resourceType: 1,
         },
         {
-          productId: 39,
-          mainTitle: "灯影传承·英勇忠义",
+          productId: parseInt(Math.random() * 100),
+          mainTitle: "京剧脸谱·专诸",
           previewImgUrl:
-            "https://mcpacimg1.pg0.cn/group4/M03/51/33/CgrZEWI9gD2AXZRCAAVUEGmRXF4342.png",
-          detailImgUrl:
-            "https://mcpacimg1.pg0.cn/group4/M00/51/33/CgrZEWI9gMOAT1gGACVjmp29DJQ834.png",
-          publisherId: null,
-          publisherName: "时代悲鸿（北京）文化艺术中心",
-          publisherLogo:
-            "https://mcpacimg1.pg0.cn/group4/M03/51/33/CgrZEWI9gDCAcu52AAByVuZ4Ht0701.png",
-          totalNumber: 10000,
-          beginTime: "2022-03-31T12:00:00",
-          endTime: "2022-04-04T23:59:59",
-          stockStatus: 2,
-          productType: 2,
-          h5JumpUrl: "",
-          payType: 3,
+            "https://s3.bmp.ovh/imgs/2022/04/14/da9c6c57a81d0b38.png",
+          publisherName: "时代蔚蓝 文化艺术中心",
           price: 9.9,
-          collectionSetId: 74,
-          pageToken: null,
-          creator: "徐悲鸿美术馆",
-          contractAddress:
-            "5ba1007257174d5be473a34d4833179f2780c6597688646a6e22b10efa4f0b9d",
-          creatorUrl:
-            "https://mcpacimg1.pg0.cn/group5/M01/3D/17/CgrZFWI9gHaAP5GEAAEMfB_niJQ316.jpg",
-          label: "非遗经典",
-          showType: "1",
-          sysTime: null,
-          resourceType: 1,
         },
         {
-          productId: 38,
-          mainTitle: "灯影传承·虎虎生威",
+          productId: parseInt(Math.random() * 100),
+          mainTitle: "京剧脸谱·包公",
           previewImgUrl:
-            "https://mcpacimg1.pg0.cn/group5/M03/3D/16/CgrZFWI9f0iAV38iAASRKLK-s4A117.png",
-          detailImgUrl:
-            "https://mcpacimg1.pg0.cn/group5/M01/3D/18/CgrZFGI9f-mAcJvrACjn_AIrA1s403.png",
-          publisherId: null,
-          publisherName: "时代悲鸿（北京）文化艺术中心",
-          publisherLogo:
-            "https://mcpacimg1.pg0.cn/group4/M00/51/32/CgrZEWI9fviAPKMwAAByVuZ4Ht0048.png",
-          totalNumber: 10000,
-          beginTime: "2022-03-30T12:00:00",
-          endTime: "2022-04-02T23:59:59",
-          stockStatus: 2,
-          productType: 2,
-          h5JumpUrl: "",
-          payType: 3,
+            "https://s3.bmp.ovh/imgs/2022/04/14/39e3f94583376a89.png",
+          publisherName: "时代蔚蓝 文化艺术中心",
           price: 9.9,
-          collectionSetId: 73,
-          pageToken: null,
-          creator: "徐悲鸿美术馆",
-          contractAddress:
-            "3fbb1a9bcdb9854cdedbc78e666def48ac4a1a60be514710e5daad3eaf85c72c",
-          creatorUrl:
-            "https://mcpacimg1.pg0.cn/group4/M00/51/32/CgrZEWI9f6CAfMR0AAEMfB_niJQ806.jpg",
-          label: "非遗经典",
-          showType: "1",
-          sysTime: null,
-          resourceType: 1,
         },
+        {
+          productId: parseInt(Math.random() * 100),
+          mainTitle: "京剧脸谱·窦尔敦",
+          previewImgUrl:
+            "https://s3.bmp.ovh/imgs/2022/04/14/ffd3291162ce97ef.png",
+          publisherName: "时代蔚蓝 文化艺术中心",
+          price: 9.9,
+        },
+        {
+          productId: parseInt(Math.random() * 100),
+          mainTitle: "京剧脸谱·典韦",
+          previewImgUrl:
+            "https://s3.bmp.ovh/imgs/2022/04/14/f2cee79bfceb40ff.png",
+          publisherName: "时代蔚蓝 文化艺术中心",
+          price: 9.9,
+        },
+                {
+          productId: parseInt(Math.random() * 100),
+          mainTitle: "京剧脸谱·魏绎",
+          previewImgUrl:
+            "https://s3.bmp.ovh/imgs/2022/04/14/757f0e2207a908aa.png",
+          publisherName: "时代蔚蓝 文化艺术中心",
+          price: 9.9,
+        },
+        {
+          productId: parseInt(Math.random() * 100),
+          mainTitle: "京剧脸谱·二郎神",
+          previewImgUrl:
+            "https://s3.bmp.ovh/imgs/2022/04/14/a368b6a75c9ea076.png",
+          publisherName: "时代蔚蓝 文化艺术中心",
+          price: 9.9,
+        },
+        {
+          productId: parseInt(Math.random() * 100),
+          mainTitle: "京剧脸谱·程咬金",
+          previewImgUrl:
+            "https://s3.bmp.ovh/imgs/2022/04/14/efbcbcfcfc67e79d.png",
+          publisherName: "时代蔚蓝 文化艺术中心",
+          price: 9.9,
+        },
+
       ],
       loading: true,
       finished: true,
@@ -141,8 +113,11 @@ export default {
       //     this.list = data;
       // })
     },
-    handleDetail(id) {
-      this.$router.push(`/detail/${id}`);
+    handleDetail(item) {
+      this.$router.push({name:'detail',params:{
+          mainTitle:item.mainTitle,
+          previewImgUrl:item.previewImgUrl
+      }});
     },
   },
 };

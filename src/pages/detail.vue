@@ -44,49 +44,26 @@ export default {
         mainTitle: "灯影传承·福将豪杰",
         previewImgUrl:
           "https://mcpacimg1.pg0.cn/group5/M00/42/27/CgrZFWI91pKAHmjYAAVgoVEkla4403.png",
-        detailImgUrl:
-          "https://mcpacimg1.pg0.cn/group4/M02/57/8C/CgrZEWI91vOAdGiAACg-G3BU3hA646.png",
         publisherId: null,
-        publisherName: "时代悲鸿（北京）文化艺术中心",
         publisherLogo:
           "https://mcpacimg1.pg0.cn/group4/M01/57/86/CgrZEGI91kOANpVWAAByVuZ4Ht0107.png",
         totalNumber: 10000,
-        beginTime: "2022-04-01T12:00:00",
-        endTime: "2022-04-05T23:59:59",
-        stockStatus: 2,
-        productType: 2,
-        h5JumpUrl: "",
-        payType: 3,
-        price: 9.9,
-        collectionSetId: 75,
-        pageToken: "68450a39e8b44588b7b0e39048426632",
-        creator: "徐悲鸿美术馆",
-        contractAddress:
-          "573f114fed67046ca9d6a81801de9c403ffa42a627f99997f66d35bfd3a7b175",
-        creatorUrl:
-          "https://mcpacimg1.pg0.cn/group4/M01/57/87/CgrZEGI91oqAW9vZAAEMfB_niJQ636.jpg",
-        label: "非遗经典",
-        showType: "1",
-        sysTime: "2022-04-12T17:18:28.021",
-        resourceType: 1,
       },
     };
   },
   created() {
-    this.$httpPost(`/product/detail`, {
-      productId: this.$route.params.id + "",
-    }).then((res) => {
-      if (res.data) {
-        this.detail = res.data;
-      }
-    });
+    this.detail.mainTitle = this.$route.params.mainTitle;
+    this.detail.previewImgUrl = this.$route.params.previewImgUrl;
   },
   mounted() {
     window.scrollTop = 0;
   },
   methods: {
     buy(){
-      this.$router.push('/orderBuy')
+       this.$router.push({name:'orderBuy',params:{
+          mainTitle:this.detail.mainTitle,
+          previewImgUrl:this.detail.previewImgUrl
+      }});
     },
     onClickLeft() {
       this.$router.go(-1);
